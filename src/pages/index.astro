@@ -3,8 +3,6 @@ import Navigation from "../components/Navigation.astro";
 import Footer from "../compontents/Footer.astro";
 ---
 
-<>Navigation</>
-
 <html lang="en">
    <head>
       <meta charset="utf-8" />
@@ -203,7 +201,7 @@ import Footer from "../compontents/Footer.astro";
       <ul class="menu">
          <li><a href="gallery.astro">GALLERY</a></li>
          <li><a href="lineup.astro">LINEUP</a></li>
-         <li><button class="red-button" onclick="rwindow.location.href='tickets.astrk'">TICKETS</button></li>
+         <li><button class="red-button" onclick="window.location.href='tickets.astro'">TICKETS</button></li>
       </ul>
 
       <div class="burger">
@@ -221,8 +219,8 @@ import Footer from "../compontents/Footer.astro";
          <img src="biglogo.png" alt="Big Logo" class="big-logo" />
       </div>
       <div class="button-container">
-         <button class="red-button">TICKETS</button>
-         <button class="red-outline-button">LINEUP</button>
+         <button class="red-button" onclick="window.location.href='tickets.astro'">TICKETS</button>
+         <button class="red-outline-button" onclick="window.location.href='lineup.astro'">LINEUP</button>
       </div>
       <div class="additional-text">Let's meet again</div>
       <div class="additional-text2">27.AUG—29.AUG</div>
@@ -250,4 +248,6 @@ import Footer from "../compontents/Footer.astro";
    <footer>
       <Footer />
    </footer>
+
+
 </html>
