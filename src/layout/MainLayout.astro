@@ -1,5 +1,7 @@
 ---
-import "../styles"
+import Footer from "../compontents/Footer.astro"
+import Navigation from "../compontents/Navigation.astro"
+const {title} = Astro.props;
 ---
 <html lang="en">
     <head>
@@ -10,9 +12,13 @@ import "../styles"
     </head>
     
     <body>
-    <header></header>
-    <main></main>
-    <footer></footer>
-    </body>
+   <h1>{title}</h1>
+     <Navigation />
     
+     <article>
+        <slot />
+     </article>
+    <Footer />
+    </body>
+ 
 </html>
