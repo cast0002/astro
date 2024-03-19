@@ -1,0 +1,43 @@
+---
+const {img} = Astro.props;
+console.log(img);
+---
+<svg xmlns="http://www.w3.org/2000/svg" version="1.1">
+    <defs>
+      <filter id="wave">
+        <feTurbulence type="fractalNoise" baseFrequency="0.05" numOctaves="3" result="noise" />
+        <feDisplacementMap in="SourceGraphic" in2="noise" scale="20" />
+      </filter>
+    </defs>
+  </svg>
+
+<article class="GalleryImg">
+  <img src={img} alt="Gallery Image">
+</article>
+
+<style> 
+.GalleryImg {
+width: 100%;
+height: auto;
+}
+
+.GalleryImg img {
+    max-width: 100%;
+    height: auto;
+    object-fit: cover;
+    filter: drop-shadow(0 0 10px rgba(192, 0, 0, 0.5)) url('#wave');
+}
+
+.GalleryImg img:hover {
+    filter: drop-shadow(0 0 10px rgba(192, 0, 0, 0.5))
+}
+
+/* asymmetrical grid */
+.GalleryImg:nth-child(2n) {
+    grid-row: span 4;
+  }
+  .GalleryImg:nth-child(3n) {
+    grid-row: span 3;
+  }
+    
+</style>

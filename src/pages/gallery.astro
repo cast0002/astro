@@ -1,0 +1,47 @@
+---
+import GalleryImg from "../compontents/GalleryImg.astro";
+import Navigation from "../compontents/Navigation.astro";
+import Footer from "../compontents/Footer.astro";
+
+const img = await fetch("https://zxxxyevjvwpdyewzzclu.supabase.co/rest/v1/galleryImg2",{
+  method:"GET",
+  headers: {
+    apikey: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Inp4eHh5ZXZqdndwZHlld3p6Y2x1Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3MTA3NDU4ODksImV4cCI6MjAyNjMyMTg4OX0.Hz5tMQHx8JRqWQ1thTSF0G6bb-gcFTnuvu-x-bLtVpo"
+  },
+}
+).then((res) => res.json());
+  
+console.log(img);
+---
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="viewport" content="width=device-width" />
+		<meta name="generator" content={Astro.generator} />
+		<link rel="stylesheet" href="styles.css">
+		<title>Gallery</title>
+	</head>
+	<>
+
+	<Navigation />
+	<main>
+		<article id="galleryGrid">
+		{img.map(image=> {
+			return <GalleryImg img={image.url}/>
+		})}
+		</article>
+	</main>
+	<Footer />
+</body>
+
+	<style>
+	
+	#galleryGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 30px;
+	margin: 0 10% 0 10%
+	}
+	</style>
+</html>
