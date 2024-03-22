@@ -32,108 +32,11 @@ import Navigation from "../compontents/Navigation.astro";
       </main>
    </body>
 
-   <script>
-      const burger = document.querySelector(".burger");
-      const nav = document.querySelector("nav");
-      const menu = document.querySelector(".menu");
-      const links = document.querySelectorAll(".menu li a");
-
-      burger.addEventListener("click", () => {
-         console.log("click");
-         burger.classList.toggle("active");
-         nav.classList.toggle("active");
-      });
-
-      links.forEach((link) => {
-         link.addEventListener("click", () => {
-            burger.classList.remove("active");
-            nav.classList.remove("active");
-         });
-      });
-   </script>
-
    <style>
-      /* CSS styles for the navigation menu */
-      .logo img {
-         width: 80px;
-         height: auto;
-         top: 0px;
+      @font-face {
+         font-family: "Font";
+         src: url("/public/NeueRegradeBold.otf") format("opentype");
       }
-
-      .logo {
-         display: inline-block;
-         vertical-align: middle;
-         top: 5px;
-      }
-
-      nav {
-         position: relative;
-         z-index: 1;
-         display: flex;
-         align-items: center;
-         justify-content: space-between;
-      }
-
-      .menu {
-         display: flex;
-         list-style: none;
-         margin: 0;
-         padding: 0;
-         justify-content: center;
-      }
-
-      .menu li:last-child {
-         margin-right: 0;
-      }
-
-      .menu a {
-         display: flex;
-         padding: 10px;
-         color: rgb(0, 0, 0);
-         text-decoration: none;
-         transition: color 0.3s;
-         text-align: end;
-         font-family: "Hekate";
-      }
-
-      .menu a:hover {
-         text-decoration: none;
-         color: black;
-      }
-
-      .red-button {
-         background-color: #4f0400;
-         color: white;
-         border: none;
-         padding: 10px 20px;
-         border-radius: 5px;
-         cursor: pointer;
-         text-decoration: none;
-         font-size: 16px;
-      }
-
-      .red-button:hover {
-         background-color: darkred;
-      }
-
-      .burger {
-         width: 30px;
-         height: 20px;
-         cursor: pointer;
-      }
-
-      .burger .line {
-         width: 100%;
-         height: 2px;
-         background-color: rgb(0, 0, 0);
-         margin-bottom: 5px;
-         transition: 0.2s linear;
-      }
-
-      .burger {
-         display: none;
-      }
-
       .button-container {
          position: absolute;
          top: 62.5%;
@@ -155,6 +58,7 @@ import Navigation from "../compontents/Navigation.astro";
          text-decoration: none;
          font-size: 16px;
          margin-right: 10px;
+         font-family: "Font", sans-serif;
       }
 
       .red-button {
@@ -216,6 +120,7 @@ import Navigation from "../compontents/Navigation.astro";
          top: 78%;
          left: 50%;
          transform: translateX(-50%);
+         font-family: "Font", sans-serif;
       }
 
       @media screen and (max-width: 700px) {

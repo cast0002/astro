@@ -21,6 +21,10 @@
       <div class="line"></div>
    </div>
    <style>
+      @font-face {
+         font-family: "Font";
+         src: url("/public/NeueRegradeBold.otf") format("opentype");
+      }
       .logo img {
          width: 80px;
          height: auto;
@@ -56,10 +60,11 @@
       .menu a {
          display: flex;
          padding: 10px;
-         color: rgb(0, 0, 0);
+         color: white;
          text-decoration: none;
          transition: color 0.3s;
          text-align: end;
+         font-family: "Font", sans-serif;
       }
 
       .menu a:hover {
